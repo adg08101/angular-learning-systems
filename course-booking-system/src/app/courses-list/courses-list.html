@@ -1,0 +1,31 @@
+<p>courses-list works!</p>
+<h2>{{ title }}</h2>
+<div class="course-item">
+  <h3>{{ courses[0].title }}</h3>
+  <p>{{ courses[0].description }}</p>
+  <p>{{ courses[0].price }}</p>
+  <p>{{ courses[0].date }}</p>
+  <p [hidden]="!courses[0].soldOut">Sold out</p>
+  <img [src]="courses[0].img" [alt]="courses[0].title" width="75">
+  <button>View details</button>
+</div>
+
+<div class="course-item">
+  <h3>{{ courses[1].title }}</h3>
+  <p>{{ courses[1].description }}</p>
+  <p>{{ courses[1].price }}</p>
+  <p>{{ courses[1].date }}</p>
+  <p [hidden]="!courses[1].soldOut">Sold out</p>
+  <img [src]="courses[1].img" [alt]="courses[1].title" width="75">
+  <button>View details</button>
+</div>
+
+<div class="course-item">
+  <h3>{{ courses[2].title }}</h3>
+  <p>{{ courses[2].description }}</p>
+  <p>{{ courses[2].price }}</p>
+  <p>{{ courses[2].date }}</p>
+  <p [hidden]="!courses[2].soldOut">Sold out</p>
+  <img [src]="courses[2].img" [alt]="courses[2].title" width="75">
+  <button>View details</button>
+</div>
