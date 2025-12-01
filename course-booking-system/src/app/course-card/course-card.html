@@ -6,10 +6,14 @@
   <p>{{ course.price | currency : 'USD' }}</p>
   <p>{{ course.date | date : 'longDate' }}</p>
   <p [hidden]="!course.soldOut">Sold out</p>
-  @if (course.price < 50) {
-  <div class="special-offer">Special Offer!</div>
-  } @if (course.onSale) {
-  <div class="sale-banner">On Sale!</div>
-  }
-  <button (click)="viewDetails(course.title)">View details</button>
+  @if (course.price < 50) { <div class="special-offer">Special Offer!
+</div>
+} @if (course.onSale) {
+<div class="sale-banner">On Sale!</div>
+}
+
+<button class="action-button" (click)="onWishlistAdded()">Add to Wishlist</button>
+
+<button [disabled]="course.soldOut" (click)="onCourseBooked()">Book course</button>
+
 </div>
