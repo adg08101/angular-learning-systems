@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgStyle, DatePipe, CurrencyPipe } from '@angular/common';
+import { CourseCard } from '../course-card/course-card';
 
 @Component({
   selector: 'app-courses-list',
-  imports: [NgStyle, DatePipe, CurrencyPipe],
+  imports: [CourseCard],
   templateUrl: './courses-list.html',
   styleUrl: './courses-list.css',
 })
@@ -14,9 +14,6 @@ export class CoursesList implements OnInit {
     { id: 2, title: 'Advanced Angular', description: 'Deep dive into Angular internals', price: 99, date: '2025-04-10', soldOut: true, img: '/angular-logo.png', onSale: true },
     { id: 3, title: 'RxJS Fundamentals', description: 'Asynchronous data streams', price: 45, date: '2025-05-05', img: '/rxjs-logo.png', soldOut: false, onSale: true }
   ];
-  viewDetails(title: string) {
-    alert(title);
-  };
 
   ngOnInit(): void {
     console.log("Mounting component");
