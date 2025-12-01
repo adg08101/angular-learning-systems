@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseCard } from '../course-card/course-card';
+import { Course } from '../models/course.model';
 
 @Component({
   selector: 'app-courses-list',
@@ -9,8 +10,8 @@ import { CourseCard } from '../course-card/course-card';
 })
 export class CoursesList implements OnInit {
   title: string = 'Available courses for you';
-  wishList: any[] = [];
-  courses = [
+  wishList: Course[] = [];
+  courses: Course[] = [
     {
       id: 1,
       title: 'Intro to Angular',
@@ -47,8 +48,8 @@ export class CoursesList implements OnInit {
     console.log(`Course booked successfully ${event.title}`);
   }
 
-  onWishlistAdded(event: any): void {
-    const alreadyExists = this.wishList.some((course: any) => course.title === event.title);
+  onWishlistAdded(event: Course): void {
+    const alreadyExists = this.wishList.some((course: Course) => course.title === event.title);
 
     if (alreadyExists) {
       console.log(`Course already added to wish list ${event.title}`);
@@ -61,7 +62,7 @@ export class CoursesList implements OnInit {
   onRemoveFromWishlist(event: any): void {
     const title = event.target.innerText;
 
-    this.wishList = this.wishList.filter((course: any) => {
+    this.wishList = this.wishList.filter((course: Course) => {
       return course.title !== title;
     });
 
