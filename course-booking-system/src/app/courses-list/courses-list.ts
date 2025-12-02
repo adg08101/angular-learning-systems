@@ -43,7 +43,9 @@ export class CoursesList implements OnInit {
 
   ngOnInit(): void {
     console.log('Mounting component');
-    this.courses = this.courseService.courses;
-    console.log('Courses loaded from service');
+    this.courseService.courses$.subscribe((courses: Course[]) => {
+      this.courses = courses;
+      console.log(`Courses loaded from service: ${courses.length}`);
+    });
   }
 }
