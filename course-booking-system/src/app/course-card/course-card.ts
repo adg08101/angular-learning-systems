@@ -13,6 +13,10 @@ export class CourseCard implements OnInit {
   @Output() courseBooked = new EventEmitter<any>();
   @Output() wishlistAdded = new EventEmitter<any>();
 
+  constructor() {
+    console.log('CourseCard component instantiated');
+  }
+
   ngOnInit(): void {
     console.log(`CourseCard component initialized for course: ${this.course.title}`);
   }

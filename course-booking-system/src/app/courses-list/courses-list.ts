@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseCard } from '../course-card/course-card';
 import { Course } from '../models/course.model';
 import { CourseService } from '../services/course-service';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-courses-list',
@@ -9,15 +10,17 @@ import { CourseService } from '../services/course-service';
   templateUrl: './courses-list.html',
   styleUrl: './courses-list.css',
 })
-export class CoursesList {
+export class CoursesList implements OnInit {
   title: string = 'Available courses for you';
   wishList: Course[] = [];
   courses: Course[] = [];
 
-  constructor(private courseService: CourseService) {
-    this.courseService.courses$.subscribe((courses: Course[]) => {
+  constructor(private courseService: CourseService, private cdr: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    this.courseService.getCourses().subscribe((courses) => {
       this.courses = courses;
-      console.log(`Courses loaded from service: ${courses.length}`);
+      this.cdr.detectChanges();
     });
   }
 
