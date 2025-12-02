@@ -9,12 +9,17 @@ import { CourseService } from '../services/course-service';
   templateUrl: './courses-list.html',
   styleUrl: './courses-list.css',
 })
-export class CoursesList implements OnInit {
+export class CoursesList {
   title: string = 'Available courses for you';
   wishList: Course[] = [];
   courses: Course[] = [];
 
-  constructor(private courseService: CourseService) {}
+  constructor(private courseService: CourseService) {
+    this.courseService.courses$.subscribe((courses: Course[]) => {
+      this.courses = courses;
+      console.log(`Courses loaded from service: ${courses.length}`);
+    });
+  }
 
   onCourseBooked(event: any): void {
     console.log(`Course booked successfully ${event.title}`);
@@ -39,13 +44,5 @@ export class CoursesList implements OnInit {
     });
 
     console.log(`Course removed from WishList successfully ${title}`);
-  }
-
-  ngOnInit(): void {
-    console.log('Mounting component');
-    this.courseService.courses$.subscribe((courses: Course[]) => {
-      this.courses = courses;
-      console.log(`Courses loaded from service: ${courses.length}`);
-    });
   }
 }
