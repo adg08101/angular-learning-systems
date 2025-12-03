@@ -3,6 +3,7 @@ import { CourseCard } from '../course-card/course-card';
 import { Course } from '../models/course.model';
 import { CourseService } from '../services/course-service';
 import { ChangeDetectorRef } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses-list',
@@ -15,7 +16,7 @@ export class CoursesList implements OnInit {
   wishList: Course[] = [];
   courses: Course[] = [];
 
-  constructor(private courseService: CourseService, private cdr: ChangeDetectorRef) {}
+  constructor(private courseService: CourseService, private cdr: ChangeDetectorRef, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.courseService.getCourses().subscribe((courses) => {

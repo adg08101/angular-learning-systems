@@ -1,2 +1,5 @@
-<app-courses-list></app-courses-list>
-<app-course-detail-card [courseId]=4></app-course-detail-card>
+<nav>
+  <a routerLink="/courses" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Courses</a>
+  <a routerLink="/courses/:id" routerLinkActive="active">Course Details</a>
+</nav>
+<router-outlet></router-outlet>
