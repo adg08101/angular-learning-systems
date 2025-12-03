@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Course } from '../models/course.model';
 import { DatePipe, CurrencyPipe } from '@angular/common';
-import { Input } from '@angular/core';
 import { CourseService } from '../services/course-service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-course-detail-card',
@@ -11,12 +11,16 @@ import { CourseService } from '../services/course-service';
   styleUrl: './course-detail-card.css',
 })
 export class CourseDetailCard implements OnInit {
-  @Input() courseId!: number;
+  courseId!: number;
   courseDetails!: Course;
 
-  constructor(private courseService: CourseService, private cdr: ChangeDetectorRef) {}
+  constructor(private courseService: CourseService, private cdr: ChangeDetectorRef, private route: ActivatedRoute) {}
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.courseId = params.get('id') ? +params.get('id')! : 0;
+    });
+
     this.courseService.getCourseById(this.courseId).subscribe(
       (course: Course) => {
         this.courseDetails = course;

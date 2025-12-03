@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { DatePipe, CurrencyPipe } from '@angular/common';
 import { Course } from '../models/course.model';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-card',
@@ -13,7 +14,7 @@ export class CourseCard implements OnInit {
   @Output() courseBooked = new EventEmitter<any>();
   @Output() wishlistAdded = new EventEmitter<any>();
 
-  constructor() {
+  constructor(private router: Router) {
     console.log('CourseCard component instantiated');
   }
 
@@ -30,6 +31,6 @@ export class CourseCard implements OnInit {
   }
 
   onSeeDetails(course: Course): void {
-    alert(`Course Details:\nTitle: ${course.title}\nDescription: ${course.description}\nDate: ${course.date}\nPrice: ${course.price}`);
+    this.router.navigate(['/courses', course.id]);
   }
 }
