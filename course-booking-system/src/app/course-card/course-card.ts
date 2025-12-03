@@ -23,9 +23,13 @@ export class CourseCard implements OnInit {
 
   onCourseBooked(): void {
     this.courseBooked.emit(this.course);
-  };
+  }
 
   onWishlistAdded(): void {
     this.wishlistAdded.emit(this.course);
-  };
+  }
+
+  onSeeDetails(course: Course): void {
+    alert(`Course Details:\nTitle: ${course.title}\nDescription: ${course.description}\nDate: ${course.date}\nPrice: ${course.price}`);
+  }
 }

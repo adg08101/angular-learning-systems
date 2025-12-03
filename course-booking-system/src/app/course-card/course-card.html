@@ -17,6 +17,7 @@
   }
 
   <button class="action-button" (click)="onWishlistAdded()">Add to Wishlist</button>
-  <button [disabled]="course.soldOut" (click)="onCourseBooked()">Book course</button>
+  <button class="action-button" [disabled]="course.soldOut" (click)="onCourseBooked()">Book course</button>
+  <button (click)="onSeeDetails(course)">See details</button>
 
 </div>
