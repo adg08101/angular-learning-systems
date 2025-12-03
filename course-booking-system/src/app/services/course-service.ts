@@ -17,6 +17,11 @@ export class CourseService {
     return this.http.get<Course[]>(`${this.baseUrl}/courses`);
   }
 
+  // GET course by ID
+  getCourseById(id: number): Observable<Course> {
+    return this.http.get<Course>(`${this.baseUrl}/courses/${id}`);
+  }
+
   // POST a new course
   addCourse(course: Course): Observable<Course> {
     return this.http.post<Course>(`${this.baseUrl}/courses`, course);
