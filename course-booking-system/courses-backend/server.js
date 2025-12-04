@@ -31,13 +31,18 @@ function saveData(data) {
 app.get('/courses', (req, res) => {
   let data = loadData(); // { courses: [...] }
 
+  console.log('Received query parameters:', req.query);
+
   const { description } = req.query;
 
   if (description) {
+    console.log(`Filtering courses with description like: ${description}`);
     data.courses = data.courses.filter((course) =>
       course.description.toLowerCase().includes(description.toLowerCase())
     );
   }
+
+  console.log(`Returning ${data.courses.length} courses`);
 
   res.json(data.courses);
 });

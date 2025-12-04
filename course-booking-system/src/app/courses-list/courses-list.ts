@@ -16,10 +16,19 @@ export class CoursesList implements OnInit {
   wishList: Course[] = [];
   courses: Course[] = [];
 
-  constructor(private courseService: CourseService, private cdr: ChangeDetectorRef, private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private courseService: CourseService,
+    private cdr: ChangeDetectorRef,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.courseService.getCourses().subscribe((courses) => {
+    const descriptionFilter = this.route.snapshot.queryParamMap.get('description');
+
+    console.log('Component initialized with description filter:', descriptionFilter);
+
+    this.courseService.getCourses(descriptionFilter ? descriptionFilter : null).subscribe((courses) => {
       this.courses = courses;
       this.cdr.detectChanges();
     });
