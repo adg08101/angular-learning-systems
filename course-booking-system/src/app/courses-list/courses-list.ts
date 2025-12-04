@@ -3,7 +3,7 @@ import { CourseCard } from '../course-card/course-card';
 import { Course } from '../models/course.model';
 import { CourseService } from '../services/course-service';
 import { ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-courses-list',
@@ -19,14 +19,11 @@ export class CoursesList implements OnInit {
   constructor(
     private courseService: CourseService,
     private cdr: ChangeDetectorRef,
-    private router: Router,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
     const descriptionFilter = this.route.snapshot.queryParamMap.get('description');
-
-    console.log('Component initialized with description filter:', descriptionFilter);
 
     this.courseService.getCourses(descriptionFilter ? descriptionFilter : null).subscribe((courses) => {
       this.courses = courses;
