@@ -5,16 +5,17 @@ import { Observable } from 'rxjs';
 import { Student } from '../models/student.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CourseService {
-  enrollStudent(name: string, email: string, enrolledCourseId: number): Observable<Student> {
-    throw new Error('Method not implemented.');
-  }
-
   private baseUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
+
+  // enrollStudent should receive an Student object
+  enrollStudent(student: Student): Observable<Student> {
+    return this.http.post<Student>(`${this.baseUrl}/students`, student);
+  }
 
   // GET all courses
   getCourses(description?: string | null): Observable<Course[]> {
