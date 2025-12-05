@@ -26,6 +26,13 @@ export class CourseService {
     return this.http.get<Course[]>(url);
   }
 
+  // GET all students
+  getAllStudents(): Observable<Student[]> {
+    // This is a mock implementation. Replace with actual HTTP call if needed.
+    let url = `${this.baseUrl}/students`;
+    return this.http.get<Student[]>(url);
+  }
+
   // GET course by ID
   getCourseById(id: number): Observable<Course> {
     return this.http.get<Course>(`${this.baseUrl}/courses/${id}`);

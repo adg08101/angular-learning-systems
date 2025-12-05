@@ -3,7 +3,7 @@ import { CoursesList } from './courses-list/courses-list';
 import { CourseDetailCard } from './course-detail-card/course-detail-card';
 import { About } from './about/about';
 import { SignUpForm } from './sign-up-form/sign-up-form';
-import { CreateCourseForm } from './create-course-form/create-course-form';
+import { CreateCourseForm } from './features/admin/create-course-form/create-course-form';
 
 export const routes: Routes = [
   // Our two main routes:
@@ -13,4 +13,9 @@ export const routes: Routes = [
   { path: 'about', component: About },
   { path: 'sign-up', component: SignUpForm },
   { path: 'create-course', component: CreateCourseForm },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./features/admin/admin-routing-module').then((m) => m.AdminRoutingModule),
+  },
 ];
