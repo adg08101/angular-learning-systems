@@ -26,9 +26,17 @@ export class SignUpForm implements OnInit {
       this.submissionSuccessful = true;
       this.submissionError = '';
 
+      // Create Student object from model
+      const newStudent: Student = {
+        name: formData.name,
+        email: formData.email,
+        enrolledCourseId: formData.enrolledCourseId,
+        id: ''
+      };
+
       // Here you can add further processing, like sending the data to a server
       this.courseService
-        .enrollStudent(formData.name, formData.email, formData.enrolledCourseId)
+        .enrollStudent(newStudent)
         .subscribe({
           next: (response: any) => {
             console.log('Student enrolled successfully:', response);

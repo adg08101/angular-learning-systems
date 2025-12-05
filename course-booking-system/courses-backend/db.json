@@ -1,43 +1,71 @@
 {
-    "courses": [
-        {
-            "id": 1,
-            "title": "Intro to Angular",
-            "description": "Learn Angular basics",
-            "price": 49,
-            "date": "2025-03-01",
-            "img": "angular-logo.png",
-            "soldOut": false
-        },
-        {
-            "id": 2,
-            "title": "Advanced Angular",
-            "description": "Deep dive into Angular",
-            "price": 99,
-            "date": "2025-04-10",
-            "img": "angular-logo.png",
-            "soldOut": true
-        },
-        {
-            "id": 3,
-            "title": "RxJS Fundamentals",
-            "description": "Asynchronous data streams",
-            "price": 45,
-            "onSale": true,
-            "date": "2025-05-05",
-            "img": "rxjs-logo.png",
-            "soldOut": false
-        },
-        {
-            "id": 4,
-            "title": "RxJS Advanced",
-            "description": "Asynchronous data streams - Advanced",
-            "price": 45,
-            "onSale": true,
-            "date": "2025-05-05",
-            "img": "rxjs-logo.png",
-            "soldOut": false
-        }
-    ],
-    "students": []
+  "courses": [
+    {
+      "id": 1,
+      "title": "Intro to Angular",
+      "description": "Learn Angular basics",
+      "price": 49,
+      "date": "2025-03-01",
+      "img": "angular-logo.png",
+      "soldOut": false
+    },
+    {
+      "id": 2,
+      "title": "Advanced Angular",
+      "description": "Deep dive into Angular",
+      "price": 99,
+      "date": "2025-04-10",
+      "img": "angular-logo.png",
+      "soldOut": true
+    },
+    {
+      "id": 3,
+      "title": "RxJS Fundamentals",
+      "description": "Asynchronous data streams",
+      "price": 45,
+      "onSale": true,
+      "date": "2025-05-05",
+      "img": "rxjs-logo.png",
+      "soldOut": false
+    },
+    {
+      "id": 4,
+      "title": "RxJS Advanced",
+      "description": "Asynchronous data streams - Advanced",
+      "price": 45,
+      "onSale": true,
+      "date": "2025-05-05",
+      "img": "rxjs-logo.png",
+      "soldOut": false
+    },
+    {
+      "title": "None to add",
+      "description": "Get on the none to add pristine",
+      "price": 150000,
+      "id": 1764943014345
+    }
+  ],
+  "students": [
+    {
+      "name": "TheClone",
+      "email": "adg08101@gmail.com",
+      "enrolledCourseId": "1",
+      "id": 1764940897216,
+      "enrolledCourses": []
+    },
+    {
+      "name": "TheClone",
+      "email": "adg08101@gmail.com",
+      "enrolledCourseId": "1",
+      "id": 1764940911497,
+      "enrolledCourses": []
+    },
+    {
+      "name": "TheClone",
+      "email": "adg08101@gmail.com",
+      "enrolledCourseId": "4",
+      "id": 1764940976985,
+      "enrolledCourses": []
+    }
+  ]
 }

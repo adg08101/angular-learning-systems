@@ -1,0 +1,30 @@
+<p>create-course-form works!</p>
+<h2>Create a New Course</h2>
+<!--
+  Create a form for this FormGroup in create-course-form.component.ts
+
+    course: Course = {
+    title: '',
+    description: '',
+    id: 0,
+    price: 0,
+  };
+-->
+<form [formGroup]="createCourseForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Course Title:</label>
+    <input id="title" formControlName="title" />
+  </div>
+
+  <div>
+    <label for="description">Course Description:</label>
+    <input id="description" formControlName="description" />
+  </div>
+
+  <div>
+    <label for="price">Course Price:</label>
+    <input id="price" type="number" formControlName="price" />
+  </div>
+
+  <button type="submit" [disabled]="createCourseForm.invalid">Create Course</button>
+</form>
