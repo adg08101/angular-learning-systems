@@ -77,6 +77,16 @@
       "img": "default-course.png",
       "soldOut": false,
       "onSale": true
+    },
+    {
+      "id": 1764962995435,
+      "title": "None to add at this time",
+      "description": "I have nothing to add at this time",
+      "price": 15000,
+      "date": "2025-12-19",
+      "img": "default-course.png",
+      "soldOut": false,
+      "onSale": true
     }
   ],
   "students": [
@@ -99,6 +109,13 @@
       "email": "adg08101@gmail.com",
       "enrolledCourseId": "4",
       "id": 1764940976985,
+      "enrolledCourses": []
+    },
+    {
+      "name": "Ahmed Davila",
+      "email": "adg08101@gmail.com",
+      "enrolledCourseId": "4",
+      "id": 1764971041005,
       "enrolledCourses": []
     }
   ]
