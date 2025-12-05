@@ -14,16 +14,38 @@
   <div>
     <label for="title">Course Title:</label>
     <input id="title" formControlName="title" />
+    {{ createCourseForm.get('title')?.invalid && createCourseForm.get('title')?.touched ? 'Title is required.' : '' }}
   </div>
 
   <div>
     <label for="description">Course Description:</label>
     <input id="description" formControlName="description" />
+    {{ createCourseForm.get('description')?.invalid && createCourseForm.get('description')?.touched ? 'Description is required.' : '' }}
   </div>
 
   <div>
     <label for="price">Course Price:</label>
     <input id="price" type="number" formControlName="price" />
+  </div>
+
+  <div>
+    <label for="date">Course Date:</label>
+    <input id="date" type="date" formControlName="date" />
+  </div>
+
+  <div>
+    <label for="img">Course Image URL:</label>
+    <input id="img" type="text" formControlName="img" />
+  </div>
+
+  <div>
+    <label for="soldOut">Sold Out:</label>
+    <input id="soldOut" type="checkbox" formControlName="soldOut" />
+  </div>
+
+  <div>
+    <label for="onSale">On Sale:</label>
+    <input id="onSale" type="checkbox" formControlName="onSale" />
   </div>
 
   <button type="submit" [disabled]="createCourseForm.invalid">Create Course</button>
