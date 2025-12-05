@@ -39,10 +39,44 @@
       "soldOut": false
     },
     {
+      "id": 1764943706554,
       "title": "None to add",
-      "description": "Get on the none to add pristine",
-      "price": 150000,
-      "id": 1764943014345
+      "description": "None to add expert",
+      "price": 150,
+      "date": "2025-12-15",
+      "img": "default-course.png",
+      "soldOut": false,
+      "onSale": true
+    },
+    {
+      "id": 1764943706554,
+      "title": "None to add",
+      "description": "None to add expert",
+      "price": 150,
+      "date": "2025-12-15",
+      "img": "default-course.png",
+      "soldOut": false,
+      "onSale": true
+    },
+    {
+      "id": 1764943786656,
+      "title": "None",
+      "description": "None to add at this point",
+      "price": 15000,
+      "date": "2025-12-19",
+      "img": "default-course.png",
+      "soldOut": true,
+      "onSale": true
+    },
+    {
+      "id": 1764944331356,
+      "title": "Just another course",
+      "description": "Get to your maxium level on Angular FE",
+      "price": 15000,
+      "date": "2025-12-18",
+      "img": "default-course.png",
+      "soldOut": false,
+      "onSale": true
     }
   ],
   "students": [
