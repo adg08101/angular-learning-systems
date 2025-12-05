@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CourseService } from '../services/course-service';
+import { Student } from '../models/student.model';
 import { Course } from '../models/course.model';
 
 @Component({
@@ -24,6 +25,21 @@ export class SignUpForm implements OnInit {
       console.log('Form submitted successfully with data:', formData);
       this.submissionSuccessful = true;
       this.submissionError = '';
+
+      // Here you can add further processing, like sending the data to a server
+      this.courseService
+        .enrollStudent(formData.name, formData.email, formData.enrolledCourseId)
+        .subscribe({
+          next: (response: any) => {
+            console.log('Student enrolled successfully:', response);
+          },
+          error: (error: any) => {
+            console.error('Error enrolling student:', error);
+            this.submissionSuccessful = false;
+            this.submissionError =
+              'There was an error enrolling the student. Please try again later.';
+          },
+        });
     } else {
       console.log('Form submission failed. Please correct the errors and try again.');
       this.submissionSuccessful = false;

@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { Course } from '../models/course.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Student } from '../models/student.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
+  enrollStudent(name: string, email: string, enrolledCourseId: number): Observable<Student> {
+    throw new Error('Method not implemented.');
+  }
 
   private baseUrl = 'http://localhost:3000';
 
